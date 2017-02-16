@@ -1,0 +1,14 @@
+
+*.class
+*.idea
+*.iml
+*.DS_Store
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+dist/
+node_modules/
+/npm-debug.log
