@@ -18,7 +18,8 @@ angular.module('MetronicApp').controller('DashboardController', function($rootSc
 			var hot = new Handsontable(container, {
 		  	data: data,
 		  	allowInvalid: false,
-   		  	colWidths: [177,100,100,100,100,100,100]
+    		manualRowMove: true,
+   		  	colWidths: [177,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100]
 			});
 
 

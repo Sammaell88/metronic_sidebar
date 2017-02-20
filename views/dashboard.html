@@ -10,6 +10,17 @@
         font-size: 12px;
     }
 
+    #example {
+        margin-left: 20px;
+    }
+
+    .scroll-container {
+        margin: 1rem 0 1rem;
+        overflow: hidden;
+        height: 700px;
+
+    }  
+
 </style>
 <!-- BEGIN PAGE BREADCRUMB -->
 
@@ -36,9 +47,10 @@
 <!-- END PAGE BREADCRUMB -->
 <!-- BEGIN MAIN CONTENT -->
 <div ng-controller="DashboardController">
-   <div class="container">
-        <div id="example" style="margin-left: 20px;"></div>
-   </div>
+    <div class="scroll-container">
+        <div id="example"></div>
+    </div>
+        
 </div>
 <!-- END MAIN CONTENT -->
 <!-- BEGIN MAIN JS & CSS -->
