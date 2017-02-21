@@ -17,44 +17,6 @@ MetronicApp.config(['$ocLazyLoadProvider', function($ocLazyLoadProvider) {
     });
 }]);
 
-/********************************************
- BEGIN: BREAKING CHANGE in AngularJS v1.3.x:
-*********************************************/
-/**
-`$controller` will no longer look for controllers on `window`.
-The old behavior of looking on `window` for controllers was originally intended
-for use in examples, demos, and toy apps. We found that allowing global controller
-functions encouraged poor practices, so we resolved to disable this behavior by
-default.
-
-To migrate, register your controllers with modules rather than exposing them
-as globals:
-
-Before:
-
-```javascript
-function MyController() {
-  // ...
-}
-```
-
-After:
-
-```javascript
-angular.module('myApp', []).controller('MyController', [function() {
-  // ...
-}]);
-
-Although it's not recommended, you can re-enable the old behavior like this:
-
-```javascript
-angular.module('myModule').config(['$controllerProvider', function($controllerProvider) {
-  // this option might be handy for migrating old apps, but please don't use it
-  // in new ones!
-  $controllerProvider.allowGlobals();
-}]);
-**/
-
 //AngularJS v1.3.x workaround for old style controller declarition in HTML
 MetronicApp.config(['$controllerProvider', function($controllerProvider) {
   // this option might be handy for migrating old apps, but please don't use it
@@ -78,7 +40,7 @@ MetronicApp.factory('settings', ['$rootScope', function($rootScope) {
         },
         assetsPath: '../assets',
         globalPath: 'assets/global',
-        layoutPath: 'assets/layouts/layout3',
+        layoutPath: 'assets/layouts/layout2',
     };
 
     $rootScope.settings = settings;
@@ -89,7 +51,7 @@ MetronicApp.factory('settings', ['$rootScope', function($rootScope) {
 /* Setup App Main Controller */
 MetronicApp.controller('AppController', ['$scope', '$rootScope', function($scope, $rootScope) {
     $scope.$on('$viewContentLoaded', function() {
-        App.initComponents(); // init core components
+        //App.initComponents(); // init core components
         //Layout.init(); //  Init entire layout(header, footer, sidebar, etc) on page load if the partials included in server side instead of loading with ng-include directive 
     });
 }]);
@@ -108,7 +70,7 @@ MetronicApp.controller('HeaderController', ['$scope', function($scope) {
 }]);
 
 /* Setup Layout Part - Sidebar */
-MetronicApp.controller('SidebarController', ['$scope', function($scope) {
+MetronicApp.controller('SidebarController', ['$state', '$scope', function($state, $scope) {
     $scope.$on('$includeContentLoaded', function() {
         Layout.initSidebar($state); // init sidebar
     });
@@ -120,13 +82,6 @@ MetronicApp.controller('QuickSidebarController', ['$scope', function($scope) {
        setTimeout(function(){
             QuickSidebar.init(); // init quick sidebar        
         }, 2000)
-    });
-}]);
-
-/* Setup Layout Part - Sidebar */
-MetronicApp.controller('PageHeadController', ['$scope', function($scope) {
-    $scope.$on('$includeContentLoaded', function() {        
-        Demo.init(); // init theme panel
     });
 }]);
 
@@ -147,8 +102,8 @@ MetronicApp.controller('FooterController', ['$scope', function($scope) {
 /* Setup Rounting For All Pages */
 MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     // Redirect any unmatched url
-    $urlRouterProvider.otherwise("/Lines/ICMA140/470/Issues/2017");  
-    
+    $urlRouterProvider.otherwise("/dashboard.html");  
+
     $stateProvider
 
         // Dashboard
@@ -426,7 +381,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
 
                             'assets/global/plugins/datatables/datatables.all.min.js',
                             'assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js',
-                            'assets/global/scripts/datatable.min.js',
+                            'assets/global/scripts/datatable.js',
 
                             'js/scripts/table-ajax.js',
                             'js/controllers/GeneralPageController.js'

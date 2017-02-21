@@ -1,16 +1,60 @@
-<!-- BEGIN PAGE BREADCRUMB -->
-<ul class="page-breadcrumb breadcrumb">
-    <li>
-        <a ui-sref="dashboard">Home</a>
-        <i class="fa fa-circle"></i>
-    </li>
-    <li>
-        <a ui-sref="dashboard">jQuery Plugins</a>
-        <i class="fa fa-circle"></i>
-    </li>
-    <li class="active"> Form Tools </li>
-</ul>
-<!-- END PAGE BREADCRUMB -->
+<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title"> Form Tools
+    <small>jquery form plugins</small>
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a ui-sref="dashboard">Home</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="formtools">jQuery Plugins</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="formtools">Form Tools</a>
+        </li>
+    </ul>
+    <div class="page-toolbar">
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" dropdown-menu-hover data-delay="1000" data-close-others="true"> Actions
+                <i class="fa fa-angle-down"></i>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+                <li>
+                    <a href="#">
+                        <i class="icon-user"></i> New User </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-present"></i> New Event
+                        <span class="badge badge-success">4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-basket"></i> New order </a>
+                </li>
+                <li class="divider"> </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-flag"></i> Pending Orders
+                        <span class="badge badge-danger">4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-users"></i> Pending Users
+                        <span class="badge badge-warning">12</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- END PAGE HEADER-->
 <!-- BEGIN MAIN CONTENT -->
 <div class="note note-success note-bordered">
     <p> With AngularJS you stil can use any jQuery plugin comes with Metronic. The jQuery plugins can be used as a standalone component or integrated with AngularJS by using directives. </p>

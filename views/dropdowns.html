@@ -1,16 +1,60 @@
-<!-- BEGIN PAGE BREADCRUMB -->
-<ul class="page-breadcrumb breadcrumb">
-    <li>
-        <a ui-sref="dashboard">Home</a>
-        <i class="fa fa-circle"></i>
-    </li>
-    <li>
-        <a ui-sref="dashboard">jQuery Plugins</a>
-        <i class="fa fa-circle"></i>
-    </li>
-    <li class="active"> Custom Dropdowns </li>
-</ul>
-<!-- END PAGE BREADCRUMB -->
+<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title"> Custom Dropdowns
+    <small>select2 & bootstrap select dropdowns</small>
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a ui-sref="dashboard">Home</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="dropdowns">jQuery Plugins</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="dropdowns">Custom Dropdowns</a>
+        </li>
+    </ul>
+    <div class="page-toolbar">
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" dropdown-menu-hover data-delay="1000" data-close-others="true"> Actions
+                <i class="fa fa-angle-down"></i>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+                <li>
+                    <a href="#">
+                        <i class="icon-user"></i> New User </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-present"></i> New Event
+                        <span class="badge badge-success">4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-basket"></i> New order </a>
+                </li>
+                <li class="divider"> </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-flag"></i> Pending Orders
+                        <span class="badge badge-danger">4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-users"></i> Pending Users
+                        <span class="badge badge-warning">12</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- END PAGE HEADER-->
 <!-- BEGIN MAIN CONTENT -->
 <div class="row">
     <div class="col-md-12">

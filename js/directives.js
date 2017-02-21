@@ -13,14 +13,13 @@ MetronicApp.directive('ngSpinnerBar', ['$rootScope', '$state',
                 // display the spinner bar whenever the route changes(the content part started loading)
                 $rootScope.$on('$stateChangeStart', function() {
                     element.removeClass('hide'); // show spinner bar
-                    Layout.closeMainMenu();
                 });
 
                 // hide the spinner bar on rounte change success(after the content loaded)
                 $rootScope.$on('$stateChangeSuccess', function(event) {
                     element.addClass('hide'); // hide spinner bar
                     $('body').removeClass('page-on-load'); // remove page loading indicator
-                    Layout.setAngularJsMainMenuActiveLink('match', null, event.currentScope.$state); // activate selected link in the sidebar menu
+                    Layout.setAngularJsSidebarMenuActiveLink('match', null, event.currentScope.$state); // activate selected link in the sidebar menu
                    
                     // auto scorll to page top
                     setTimeout(function () {
@@ -43,19 +42,18 @@ MetronicApp.directive('ngSpinnerBar', ['$rootScope', '$state',
 ])
 
 // Handle global LINK click
-MetronicApp.directive('a',
-    function() {
-        return {
-            restrict: 'E',
-            link: function(scope, elem, attrs) {
-                if (attrs.ngClick || attrs.href === '' || attrs.href === '#') {
-                    elem.on('click', function(e) {
-                        e.preventDefault(); // prevent link click for above criteria
-                    });
-                }
+MetronicApp.directive('a', function() {
+    return {
+        restrict: 'E',
+        link: function(scope, elem, attrs) {
+            if (attrs.ngClick || attrs.href === '' || attrs.href === '#') {
+                elem.on('click', function(e) {
+                    e.preventDefault(); // prevent link click for above criteria
+                });
             }
-        };
-    });
+        }
+    };
+});
 
 // Handle Dropdown Hover Plugin Integration
 MetronicApp.directive('dropdownMenuHover', function () {
